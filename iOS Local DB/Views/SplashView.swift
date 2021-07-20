@@ -8,10 +8,16 @@
 import SwiftUI
 
 struct SplashView: View {
+    
+    var networkManager = NetworkManager()
+    
     var body: some View {
         Text("iOS Local DB")
             .font(.title)
             .fontWeight(.semibold)
+            .onAppear(perform: {
+                networkManager.fetchUsers()
+            })
     }
 }
 
