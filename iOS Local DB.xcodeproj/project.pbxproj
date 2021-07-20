@@ -12,6 +12,7 @@
 		AB18522826A4D8AC00D14AE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB18522726A4D8AC00D14AE2 /* Assets.xcassets */; };
 		AB18522B26A4D8AC00D14AE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB18522A26A4D8AC00D14AE2 /* Preview Assets.xcassets */; };
 		ABF893CF26A673A2006D5A34 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF893CE26A673A2006D5A34 /* SplashView.swift */; };
+		ABF893D426A67502006D5A34 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF893D326A67502006D5A34 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		AB18522A26A4D8AC00D14AE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB18522C26A4D8AC00D14AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABF893CE26A673A2006D5A34 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		ABF893D326A67502006D5A34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		AC0C86BE13DF8E26E08AC639 /* Pods-iOS Local DB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Local DB.release.xcconfig"; path = "Target Support Files/Pods-iOS Local DB/Pods-iOS Local DB.release.xcconfig"; sourceTree = "<group>"; };
 		C62F5154CB22389F470EAB6A /* Pods_iOS_Local_DB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Local_DB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA2875BBFD3A3DDDFE015CEA /* Pods-iOS Local DB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Local DB.debug.xcconfig"; path = "Target Support Files/Pods-iOS Local DB/Pods-iOS Local DB.debug.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF893CE26A673A2006D5A34 /* SplashView.swift */,
+				ABF893D326A67502006D5A34 /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABF893D426A67502006D5A34 /* HomeView.swift in Sources */,
 				AB18522426A4D8AB00D14AE2 /* iOS_Local_DBApp.swift in Sources */,
 				ABF893CF26A673A2006D5A34 /* SplashView.swift in Sources */,
 			);
