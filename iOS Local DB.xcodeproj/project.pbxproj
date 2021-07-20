@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		11A9AAD03AD384B220A8971D /* Pods_iOS_Local_DB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C62F5154CB22389F470EAB6A /* Pods_iOS_Local_DB.framework */; };
 		AB18522426A4D8AB00D14AE2 /* iOS_Local_DBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18522326A4D8AB00D14AE2 /* iOS_Local_DBApp.swift */; };
-		AB18522626A4D8AB00D14AE2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18522526A4D8AB00D14AE2 /* ContentView.swift */; };
 		AB18522826A4D8AC00D14AE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB18522726A4D8AC00D14AE2 /* Assets.xcassets */; };
 		AB18522B26A4D8AC00D14AE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB18522A26A4D8AC00D14AE2 /* Preview Assets.xcassets */; };
 		ABF893CF26A673A2006D5A34 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF893CE26A673A2006D5A34 /* SplashView.swift */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		AB18522026A4D8AB00D14AE2 /* iOS Local DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Local DB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB18522326A4D8AB00D14AE2 /* iOS_Local_DBApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS_Local_DBApp.swift; sourceTree = "<group>"; };
-		AB18522526A4D8AB00D14AE2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AB18522726A4D8AC00D14AE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB18522A26A4D8AC00D14AE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB18522C26A4D8AC00D14AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,7 +70,6 @@
 			children = (
 				ABF893CD26A67388006D5A34 /* Views */,
 				AB18522326A4D8AB00D14AE2 /* iOS_Local_DBApp.swift */,
-				AB18522526A4D8AB00D14AE2 /* ContentView.swift */,
 				AB18522726A4D8AC00D14AE2 /* Assets.xcassets */,
 				AB18522C26A4D8AC00D14AE2 /* Info.plist */,
 				AB18522926A4D8AC00D14AE2 /* Preview Content */,
@@ -217,7 +214,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB18522626A4D8AB00D14AE2 /* ContentView.swift in Sources */,
 				AB18522426A4D8AB00D14AE2 /* iOS_Local_DBApp.swift in Sources */,
 				ABF893CF26A673A2006D5A34 /* SplashView.swift in Sources */,
 			);
