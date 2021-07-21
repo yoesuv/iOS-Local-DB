@@ -7,5 +7,6 @@ target 'iOS Local DB' do
 
   # Pods for iOS Local DB
   pod 'Alamofire', '~> 5.2'
+  pod 'ObjectBox'
 
 end

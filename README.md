@@ -3,4 +3,4 @@
 
 #### Libraries ####
 - [Alamofire](https://cocoapods.org/pods/Alamofire)
-- [SQLite Swift](https://cocoapods.org/pods/SQLite.swift)
+- [ObjectBox Swift](https://swift.objectbox.io/)
