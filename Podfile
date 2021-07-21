@@ -7,6 +7,5 @@ target 'iOS Local DB' do
 
   # Pods for iOS Local DB
   pod 'Alamofire', '~> 5.2'
-  pod 'SQLite.swift', '~> 0.12.0'
 
 end

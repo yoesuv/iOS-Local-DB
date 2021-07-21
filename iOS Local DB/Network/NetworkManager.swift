@@ -14,7 +14,7 @@ class NetworkManager: ObservableObject {
         AF.request("http://jsonplaceholder.typicode.com/users/", method: .get)
             .responseDecodable(of: [User].self) { response in
                 if (response.error == nil) {
-                    print("NetworkManager # success \(response.data?.count)")
+                    print("NetworkManager # success \(response.value?.count)")
                 } else {
                     print("NetworkManager # error \(response.error!)")
                 }

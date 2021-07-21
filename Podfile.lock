@@ -1,22 +1,16 @@
 PODS:
   - Alamofire (5.4.3)
-  - SQLite.swift (0.12.2):
-    - SQLite.swift/standard (= 0.12.2)
-  - SQLite.swift/standard (0.12.2)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
-  - SQLite.swift (~> 0.12.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - SQLite.swift
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  SQLite.swift: d2b4642190917051ce6bd1d49aab565fe794eea3
 
-PODFILE CHECKSUM: 397ee1c0543277cda99e69bdf2c3430f2487f90b
+PODFILE CHECKSUM: 4f48d396c3b922d1c4315982c5b417ce8ac7515a
 
 COCOAPODS: 1.10.0
