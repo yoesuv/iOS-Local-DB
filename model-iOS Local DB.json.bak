@@ -100,7 +100,7 @@
     },
     {
       "id": "9:2806057558175625472",
-      "lastPropertyId": "9:3861092123812257280",
+      "lastPropertyId": "7:1330344758600632576",
       "name": "UderDb",
       "properties": [
         {
@@ -138,29 +138,13 @@
           "id": "7:1330344758600632576",
           "name": "website",
           "type": 9
-        },
-        {
-          "flags": 8,
-          "id": "8:1717064122576292608",
-          "indexId": "3:1745425844472251648",
-          "name": "address",
-          "relationTarget": "AddressDb",
-          "type": 11
-        },
-        {
-          "flags": 8,
-          "id": "9:3861092123812257280",
-          "indexId": "4:3370545536847125760",
-          "name": "company",
-          "relationTarget": "CompanyDb",
-          "type": 11
         }
       ],
       "relations": []
     }
   ],
   "lastEntityId": "9:2806057558175625472",
-  "lastIndexId": "4:3370545536847125760",
+  "lastIndexId": "2:6562369206978454528",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 5,
