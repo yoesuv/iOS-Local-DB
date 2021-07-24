@@ -9,11 +9,11 @@ import Foundation
 import Alamofire
 import ObjectBox
 
-class NetworkManager: ObservableObject {
+class NetworkManager {
     
     let dbName = "db_users"
     
-    func fetchUsers() {
+    func fetchUsers(doneLoading: @escaping () -> Void) {
         AF.request("http://jsonplaceholder.typicode.com/users/", method: .get)
             .responseDecodable(of: [User].self) { response in
                 if (response.error == nil) {
@@ -30,6 +30,7 @@ class NetworkManager: ObservableObject {
                         try userBox.removeAll()
                         if let users = response.value {
                             try userBox.put(users)
+                            doneLoading()
                         }
                     } catch {
                         print("NetworkManager # error \(error)")

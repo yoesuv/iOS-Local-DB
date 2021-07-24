@@ -9,16 +9,34 @@ import SwiftUI
 
 struct SplashView: View {
     
-    var networkManager = NetworkManager()
+    @State private var isActive = false
+    
+    let home = HomeView()
+    let networkManager = NetworkManager()
     
     var body: some View {
-        Text("iOS Local DB")
-            .font(.title)
-            .fontWeight(.semibold)
-            .onAppear(perform: {
-                networkManager.fetchUsers()
-            })
+        NavigationView {
+            VStack(alignment: .center) {
+                Text("iOS Local DB")
+                    .font(.title)
+                    .fontWeight(.semibold)
+                NavigationLink(
+                    destination: home,
+                    isActive: $isActive,
+                    label: {
+                        EmptyView()
+                    })
+            }
+        }
+        .onAppear(perform: {
+            networkManager.fetchUsers {
+                DispatchQueue.main.async {
+                    self.isActive = true
+                }
+            }
+        })
     }
+    
 }
 
 struct SplashView_Previews: PreviewProvider {
