@@ -6,28 +6,43 @@
 //
 
 import Foundation
+import ObjectBox
 
-// MARK: - User
-struct User: Codable {
-    let id: Int
-    let name, username, email: String
-    let address: Address
-    let phone, website: String
-    let company: Company
+// objectbox: entity
+class User: Codable {
+    
+    // objectbox: id
+    var idObjectBox: UInt64 = 0
+    var id: Int = 0
+    var name: String = ""
+    var username: String = ""
+    var email: String = ""
+    var phone: String = ""
+    var website: String = ""
+    
+    required init() {
+        
+    }
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name
+        case username
+        case email
+        case phone
+        case website
+    }
 }
 
-// MARK: - Address
 struct Address: Codable {
     let street, suite, city, zipcode: String
     let geo: Geo
 }
 
-// MARK: - Geo
 struct Geo: Codable {
     let lat, lng: String
 }
 
-// MARK: - Company
 struct Company: Codable {
     let name, catchPhrase, bs: String
 }

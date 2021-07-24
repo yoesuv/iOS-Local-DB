@@ -26,6 +26,11 @@ class NetworkManager: ObservableObject {
                         let directory = appSupport.appendingPathComponent(self.dbName)
                         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true, attributes: nil)
                         let store = try Store(directoryPath: directory.path)
+                        let userBox = store.box(for: User.self)
+                        try userBox.removeAll()
+                        if let users = response.value {
+                            try userBox.put(users)
+                        }
                     } catch {
                         print("NetworkManager # error \(error)")
                     }

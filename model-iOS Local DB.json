@@ -157,9 +157,53 @@
         }
       ],
       "relations": []
+    },
+    {
+      "id": "10:3879369699653537024",
+      "lastPropertyId": "7:2849615842124321280",
+      "name": "User",
+      "properties": [
+        {
+          "id": "1:5581052285888104960",
+          "name": "id",
+          "type": 6
+        },
+        {
+          "id": "2:7961787772682502144",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:4015187574609962240",
+          "name": "username",
+          "type": 9
+        },
+        {
+          "id": "4:3657572821906941696",
+          "name": "email",
+          "type": 9
+        },
+        {
+          "id": "5:6778625612791471616",
+          "name": "phone",
+          "type": 9
+        },
+        {
+          "id": "6:2338573016468348416",
+          "name": "website",
+          "type": 9
+        },
+        {
+          "flags": 1,
+          "id": "7:2849615842124321280",
+          "name": "idObjectBox",
+          "type": 6
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "9:2806057558175625472",
+  "lastEntityId": "10:3879369699653537024",
   "lastIndexId": "4:3370545536847125760",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
