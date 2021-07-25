@@ -13,7 +13,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
-            Text("Home View")
+            Text("User Count \(viewModel.dataCount)")
         }
         .navigationBarHidden(true)
         .onAppear(perform: {

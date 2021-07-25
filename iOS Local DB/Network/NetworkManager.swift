@@ -11,8 +11,6 @@ import ObjectBox
 
 class NetworkManager {
     
-    let dbName = "db_users"
-    
     func fetchUsers(doneLoading: @escaping () -> Void) {
         AF.request("http://jsonplaceholder.typicode.com/users/", method: .get)
             .responseDecodable(of: [User].self) { response in
@@ -23,7 +21,7 @@ class NetworkManager {
                     do {
                         let appSupport = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
                             .appendingPathComponent(Bundle.main.bundleIdentifier!)
-                        let directory = appSupport.appendingPathComponent(self.dbName)
+                        let directory = appSupport.appendingPathComponent(Constants.dbName)
                         try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true, attributes: nil)
                         let store = try Store(directoryPath: directory.path)
                         let userBox = store.box(for: User.self)
