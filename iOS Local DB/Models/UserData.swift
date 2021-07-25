@@ -9,7 +9,7 @@ import Foundation
 import ObjectBox
 
 // objectbox: entity
-class User: Codable {
+class User: Codable, Identifiable {
     
     // objectbox: id
     var idObjectBox: UInt64 = 0

@@ -10,7 +10,7 @@ import ObjectBox
 
 class HomeViewModel: ObservableObject {
     
-    @Published var dataCount: Int = 0
+    @Published var users = [User]()
     var userBox: Box<User>? = nil
     
     init() {
@@ -30,7 +30,7 @@ class HomeViewModel: ObservableObject {
         if let box = userBox {
             do {
                 print("HomeViewModel # user count \(try box.all().count)")
-                dataCount = try box.all().count
+                users = try box.all()
             } catch {
                 print("HomeViewModel # error load users \(error)")
             }
