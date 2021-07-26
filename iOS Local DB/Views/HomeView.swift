@@ -15,9 +15,13 @@ struct HomeView: View {
         NavigationView {
             List {
                 ForEach(viewModel.users) { user in
-                    Text("\(user.id). \(user.name)")
-                        .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 0))
-                        
+                    HStack {
+                        Text("\(user.id). \(user.name)")
+                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                        Spacer()
+                        Image(systemName: "trash.fill")
+                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+                    }
                 }
                 .listRowInsets(EdgeInsets())
             }
