@@ -19,8 +19,12 @@ struct HomeView: View {
                         Text("\(user.id). \(user.name)")
                             .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                         Spacer()
-                        Image(systemName: "trash.fill")
-                            .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
+                        Button(action:{
+                            print("HomeView # delete \(user.name)")
+                        }) {
+                            Image(systemName: "trash.fill")
+                        }
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
                     }
                 }
                 .listRowInsets(EdgeInsets())
