@@ -10,6 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @ObservedObject var viewModel = HomeViewModel()
+    @State var showAlertDelete = false
+    @State var name: String = ""
     
     var body: some View {
         NavigationView {
@@ -20,7 +22,8 @@ struct HomeView: View {
                             .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                         Spacer()
                         Button(action:{
-                            print("HomeView # delete \(user.name)")
+                            self.name = user.name
+                            showAlertDelete.toggle()
                         }) {
                             Image(systemName: "trash.fill")
                         }
@@ -29,13 +32,28 @@ struct HomeView: View {
                 }
                 .listRowInsets(EdgeInsets())
             }
-            .navigationBarTitle(Text("List User"), displayMode: .inline)
+            .navigationBarTitle(Text("List User "), displayMode: .inline)
         }
         .navigationBarHidden(true)
         .onAppear(perform: {
             viewModel.loadUsers()
         })
+        .alert(isPresented: $showAlertDelete) {
+            alertDelete()
+        }
     }
+    
+    func alertDelete() -> Alert {
+        return Alert(
+            title: Text("DELETE"),
+            message: Text("Delete user \(self.name)?"),
+            primaryButton: .destructive(Text("Yes"), action: {
+                print("HomeView # delete \(self.name)")
+            }),
+            secondaryButton: .cancel(Text("Cancel"))
+        )
+    }
+    
 }
 
 struct HomeView_Previews: PreviewProvider {
