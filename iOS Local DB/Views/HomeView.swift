@@ -17,22 +17,18 @@ struct HomeView: View {
         NavigationView {
             List {
                 ForEach(viewModel.users) { user in
-                    HStack {
-                        Text("\(user.id). \(user.name)")
-                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
-                        Spacer()
-                        Button(action:{
-                            self.name = user.name
-                            showAlertDelete.toggle()
-                        }) {
-                            Image(systemName: "trash.fill")
-                        }
-                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 10))
-                    }
+                    Text("\(user.id). \(user.name)")
+                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
                 }
+                .onDelete(perform: { indexSet in
+                    indexSet.forEach({ index in
+                        self.name = viewModel.users[index].name
+                        showAlertDelete.toggle()
+                    })
+                })
                 .listRowInsets(EdgeInsets())
             }
-            .navigationBarTitle(Text("List User "), displayMode: .inline)
+            .navigationBarTitle(Text("List User"), displayMode: .inline)
         }
         .navigationBarHidden(true)
         .onAppear(perform: {
