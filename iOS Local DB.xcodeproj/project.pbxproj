@@ -12,6 +12,8 @@
 		AB18522426A4D8AB00D14AE2 /* iOS_Local_DBApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB18522326A4D8AB00D14AE2 /* iOS_Local_DBApp.swift */; };
 		AB18522826A4D8AC00D14AE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB18522726A4D8AC00D14AE2 /* Assets.xcassets */; };
 		AB18522B26A4D8AC00D14AE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB18522A26A4D8AC00D14AE2 /* Preview Assets.xcassets */; };
+		AB5D1FBE26B50BDA0024C678 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D1FBD26B50BDA0024C678 /* NetworkService.swift */; };
+		AB5D1FC226B50CDC0024C678 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D1FC126B50CDC0024C678 /* SplashViewModel.swift */; };
 		AB8C184B26AA331900F35E59 /* UserDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8C184A26AA331900F35E59 /* UserDb.swift */; };
 		ABF7E0CB26ACDF0D00F76CE0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7E0CA26ACDF0D00F76CE0 /* HomeViewModel.swift */; };
 		ABF7E0CE26ACE24500F76CE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7E0CD26ACE24500F76CE0 /* Constants.swift */; };
@@ -28,6 +30,8 @@
 		AB18522726A4D8AC00D14AE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB18522A26A4D8AC00D14AE2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB18522C26A4D8AC00D14AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB5D1FBD26B50BDA0024C678 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		AB5D1FC126B50CDC0024C678 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		AB8C184A26AA331900F35E59 /* UserDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDb.swift; sourceTree = "<group>"; };
 		ABF7E0CA26ACDF0D00F76CE0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		ABF7E0CD26ACE24500F76CE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 		AB18522226A4D8AB00D14AE2 /* iOS Local DB */ = {
 			isa = PBXGroup;
 			children = (
+				AB5D1FBC26B50BC20024C678 /* Services */,
 				ABF7E0C926ACDEF000F76CE0 /* ViewModels */,
 				AB8C184926AA330200F35E59 /* Databases */,
 				ABF893DB26A676F5006D5A34 /* Models */,
@@ -113,6 +118,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		AB5D1FBC26B50BC20024C678 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AB5D1FBD26B50BDA0024C678 /* NetworkService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		AB8C184926AA330200F35E59 /* Databases */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				ABF7E0CA26ACDF0D00F76CE0 /* HomeViewModel.swift */,
+				AB5D1FC126B50CDC0024C678 /* SplashViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -294,9 +308,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB5D1FBE26B50BDA0024C678 /* NetworkService.swift in Sources */,
 				ABF893D826A67598006D5A34 /* NetworkManager.swift in Sources */,
 				ABF893D426A67502006D5A34 /* HomeView.swift in Sources */,
 				AB8C184B26AA331900F35E59 /* UserDb.swift in Sources */,
+				AB5D1FC226B50CDC0024C678 /* SplashViewModel.swift in Sources */,
 				ABF7E0CB26ACDF0D00F76CE0 /* HomeViewModel.swift in Sources */,
 				AB18522426A4D8AB00D14AE2 /* iOS_Local_DBApp.swift in Sources */,
 				ABF893DD26A67708006D5A34 /* UserData.swift in Sources */,

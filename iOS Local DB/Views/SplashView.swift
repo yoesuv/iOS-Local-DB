@@ -10,9 +10,9 @@ import SwiftUI
 struct SplashView: View {
     
     @State private var isActive = false
+    @ObservedObject var viewModel = SplashViewModel()
     
     let home = HomeView()
-    let networkManager = NetworkManager()
     
     var body: some View {
         NavigationView {
@@ -29,11 +29,7 @@ struct SplashView: View {
             }
         }
         .onAppear(perform: {
-            networkManager.fetchUsers {
-                DispatchQueue.main.async {
-                    self.isActive = true
-                }
-            }
+            viewModel.loadUsers()
         })
     }
     
