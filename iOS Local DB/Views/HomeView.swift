@@ -26,6 +26,7 @@ struct HomeView: View {
                 })
                 .listRowInsets(EdgeInsets())
             }
+            .listStyle(PlainListStyle())
             .navigationBarTitle(Text("List User"), displayMode: .inline)
             .navigationBarItems(trailing: Button("Delete All", action: {
                 showAlertDelete.toggle()
