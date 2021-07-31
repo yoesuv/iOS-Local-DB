@@ -11,7 +11,6 @@ struct HomeView: View {
     
     @ObservedObject var viewModel = HomeViewModel()
     @State var showAlertDelete = false
-    @State var name: String = ""
     
     var body: some View {
         NavigationView {
@@ -22,13 +21,15 @@ struct HomeView: View {
                 }
                 .onDelete(perform: { indexSet in
                     indexSet.forEach({ index in
-                        self.name = viewModel.users[index].name
-                        showAlertDelete.toggle()
+                        viewModel.users.remove(at: index)
                     })
                 })
                 .listRowInsets(EdgeInsets())
             }
             .navigationBarTitle(Text("List User"), displayMode: .inline)
+            .navigationBarItems(trailing: Button("Delete All", action: {
+                showAlertDelete.toggle()
+            }))
         }
         .navigationBarHidden(true)
         .onAppear(perform: {
@@ -42,9 +43,9 @@ struct HomeView: View {
     func alertDelete() -> Alert {
         return Alert(
             title: Text("DELETE"),
-            message: Text("Delete user \(self.name)?"),
+            message: Text("Delete All user?"),
             primaryButton: .destructive(Text("Yes"), action: {
-                print("HomeView # delete \(self.name)")
+                viewModel.users.removeAll()
             }),
             secondaryButton: .cancel(Text("Cancel"))
         )
