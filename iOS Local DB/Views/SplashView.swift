@@ -10,8 +10,8 @@ import SwiftUI
 struct SplashView: View {
     
     @State private var isActive = false
-    @ObservedObject var viewModel = SplashViewModel()
     
+    let viewModel = SplashViewModel()
     let home = HomeView()
     
     var body: some View {
@@ -29,7 +29,9 @@ struct SplashView: View {
             }
         }
         .onAppear(perform: {
-            viewModel.loadUsers()
+            viewModel.loadUsers {
+                isActive = true
+            }
         })
     }
     
