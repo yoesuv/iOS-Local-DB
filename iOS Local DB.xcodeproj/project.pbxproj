@@ -14,12 +14,10 @@
 		AB18522B26A4D8AC00D14AE2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB18522A26A4D8AC00D14AE2 /* Preview Assets.xcassets */; };
 		AB5D1FBE26B50BDA0024C678 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D1FBD26B50BDA0024C678 /* NetworkService.swift */; };
 		AB5D1FC226B50CDC0024C678 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D1FC126B50CDC0024C678 /* SplashViewModel.swift */; };
-		AB8C184B26AA331900F35E59 /* UserDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB8C184A26AA331900F35E59 /* UserDb.swift */; };
 		ABF7E0CB26ACDF0D00F76CE0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7E0CA26ACDF0D00F76CE0 /* HomeViewModel.swift */; };
 		ABF7E0CE26ACE24500F76CE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7E0CD26ACE24500F76CE0 /* Constants.swift */; };
 		ABF893CF26A673A2006D5A34 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF893CE26A673A2006D5A34 /* SplashView.swift */; };
 		ABF893D426A67502006D5A34 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF893D326A67502006D5A34 /* HomeView.swift */; };
-		ABF893D826A67598006D5A34 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF893D726A67598006D5A34 /* NetworkManager.swift */; };
 		ABF893DD26A67708006D5A34 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF893DC26A67708006D5A34 /* UserData.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,12 +30,10 @@
 		AB18522C26A4D8AC00D14AE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB5D1FBD26B50BDA0024C678 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		AB5D1FC126B50CDC0024C678 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
-		AB8C184A26AA331900F35E59 /* UserDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDb.swift; sourceTree = "<group>"; };
 		ABF7E0CA26ACDF0D00F76CE0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		ABF7E0CD26ACE24500F76CE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ABF893CE26A673A2006D5A34 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		ABF893D326A67502006D5A34 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		ABF893D726A67598006D5A34 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		ABF893DC26A67708006D5A34 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		AC0C86BE13DF8E26E08AC639 /* Pods-iOS Local DB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOS Local DB.release.xcconfig"; path = "Target Support Files/Pods-iOS Local DB/Pods-iOS Local DB.release.xcconfig"; sourceTree = "<group>"; };
 		C62F5154CB22389F470EAB6A /* Pods_iOS_Local_DB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOS_Local_DB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,9 +93,7 @@
 			children = (
 				AB5D1FBC26B50BC20024C678 /* Services */,
 				ABF7E0C926ACDEF000F76CE0 /* ViewModels */,
-				AB8C184926AA330200F35E59 /* Databases */,
 				ABF893DB26A676F5006D5A34 /* Models */,
-				ABF893D626A67560006D5A34 /* Network */,
 				ABF893CD26A67388006D5A34 /* Views */,
 				AB18522326A4D8AB00D14AE2 /* iOS_Local_DBApp.swift */,
 				AB18522726A4D8AC00D14AE2 /* Assets.xcassets */,
@@ -126,14 +120,6 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		AB8C184926AA330200F35E59 /* Databases */ = {
-			isa = PBXGroup;
-			children = (
-				AB8C184A26AA331900F35E59 /* UserDb.swift */,
-			);
-			path = Databases;
-			sourceTree = "<group>";
-		};
 		ABF7E0C926ACDEF000F76CE0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -150,14 +136,6 @@
 				ABF893D326A67502006D5A34 /* HomeView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		ABF893D626A67560006D5A34 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				ABF893D726A67598006D5A34 /* NetworkManager.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		ABF893DB26A676F5006D5A34 /* Models */ = {
@@ -309,9 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB5D1FBE26B50BDA0024C678 /* NetworkService.swift in Sources */,
-				ABF893D826A67598006D5A34 /* NetworkManager.swift in Sources */,
 				ABF893D426A67502006D5A34 /* HomeView.swift in Sources */,
-				AB8C184B26AA331900F35E59 /* UserDb.swift in Sources */,
 				AB5D1FC226B50CDC0024C678 /* SplashViewModel.swift in Sources */,
 				ABF7E0CB26ACDF0D00F76CE0 /* HomeViewModel.swift in Sources */,
 				AB18522426A4D8AB00D14AE2 /* iOS_Local_DBApp.swift in Sources */,
