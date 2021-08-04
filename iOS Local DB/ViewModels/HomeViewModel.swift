@@ -37,4 +37,14 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+    func deleteAllUser() {
+        if let box = userBox {
+            do {
+                try box.removeAll()
+            } catch {
+                print("HomeViewModel # error delete all user \(error)")
+            }
+        }
+    }
+    
 }

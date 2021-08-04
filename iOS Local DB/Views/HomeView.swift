@@ -47,6 +47,7 @@ struct HomeView: View {
             message: Text("Delete All user?"),
             primaryButton: .destructive(Text("Yes"), action: {
                 viewModel.users.removeAll()
+                viewModel.deleteAllUser()
             }),
             secondaryButton: .cancel(Text("Cancel"))
         )
