@@ -21,6 +21,8 @@ struct HomeView: View {
                 }
                 .onDelete(perform: { indexSet in
                     indexSet.forEach({ index in
+                        let user = viewModel.users[index]
+                        viewModel.deleteUser(id: user.idObjectBox)
                         viewModel.users.remove(at: index)
                     })
                 })
