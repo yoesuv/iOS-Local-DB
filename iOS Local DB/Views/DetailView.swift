@@ -11,8 +11,21 @@ struct DetailView: View {
     
     let idObjectBox: UInt64?
     
+    @ObservedObject var viewModel = DetailViewModel()
+    
     var body: some View {
-        Text("ObjectBox ID : \(idObjectBox!)")
+        GeometryReader { geo in
+            VStack(alignment: .leading){
+                Text("ID : \(viewModel.id)")
+                Text("Name : \(viewModel.name)")
+                Text("Username : \(viewModel.username)")
+                Text("Email : \(viewModel.email)")
+            }.frame(maxHeight: geo.size.height, alignment: .topLeading)
+            .padding(10)
+            .onAppear {
+                viewModel.loadUser(id: idObjectBox)
+            }
+        }
     }
 }
 
