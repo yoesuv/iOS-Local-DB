@@ -16,8 +16,13 @@ struct HomeView: View {
         NavigationView {
             List {
                 ForEach(viewModel.users) { user in
-                    Text("\(user.id). \(user.name)")
-                        .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                    ZStack {
+                        Text("\(user.id). \(user.name)")
+                            .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
+                        NavigationLink(destination: DetailView()) {
+                            EmptyView()
+                        }.frame(width: 0).opacity(0)
+                    }
                 }
                 .onDelete(perform: { indexSet in
                     indexSet.forEach({ index in
