@@ -19,7 +19,7 @@ struct HomeView: View {
                     ZStack {
                         Text("\(user.id). \(user.name)")
                             .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0))
-                        NavigationLink(destination: DetailView()) {
+                        NavigationLink(destination: DetailView(idObjectBox: user.idObjectBox)) {
                             EmptyView()
                         }.frame(width: 0).opacity(0)
                     }
