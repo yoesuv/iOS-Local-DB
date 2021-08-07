@@ -7,95 +7,95 @@ import Foundation
 
 // MARK: - Entity metadata
 
-extension User: ObjectBox.Entity {}
+extension UserDb: ObjectBox.Entity {}
 
-extension User: ObjectBox.__EntityRelatable {
-    internal typealias EntityType = User
+extension UserDb: ObjectBox.__EntityRelatable {
+    internal typealias EntityType = UserDb
 
-    internal var _id: EntityId<User> {
-        return EntityId<User>(self.idObjectBox.value)
+    internal var _id: EntityId<UserDb> {
+        return EntityId<UserDb>(self.idObjectBox.value)
     }
 }
 
-extension User: ObjectBox.EntityInspectable {
-    internal typealias EntityBindingType = UserBinding
+extension UserDb: ObjectBox.EntityInspectable {
+    internal typealias EntityBindingType = UserDbBinding
 
     /// Generated metadata used by ObjectBox to persist the entity.
-    internal static var entityInfo = ObjectBox.EntityInfo(name: "User", id: 10)
+    internal static var entityInfo = ObjectBox.EntityInfo(name: "UserDb", id: 11)
 
     internal static var entityBinding = EntityBindingType()
 
     fileprivate static func buildEntity(modelBuilder: ObjectBox.ModelBuilder) throws {
-        let entityBuilder = try modelBuilder.entityBuilder(for: User.self, id: 10, uid: 3879369699653537024)
-        try entityBuilder.addProperty(name: "idObjectBox", type: UInt64.entityPropertyType, flags: [.id], id: 7, uid: 2849615842124321280)
-        try entityBuilder.addProperty(name: "id", type: Int.entityPropertyType, id: 1, uid: 5581052285888104960)
-        try entityBuilder.addProperty(name: "name", type: String.entityPropertyType, id: 2, uid: 7961787772682502144)
-        try entityBuilder.addProperty(name: "username", type: String.entityPropertyType, id: 3, uid: 4015187574609962240)
-        try entityBuilder.addProperty(name: "email", type: String.entityPropertyType, id: 4, uid: 3657572821906941696)
-        try entityBuilder.addProperty(name: "phone", type: String.entityPropertyType, id: 5, uid: 6778625612791471616)
-        try entityBuilder.addProperty(name: "website", type: String.entityPropertyType, id: 6, uid: 2338573016468348416)
+        let entityBuilder = try modelBuilder.entityBuilder(for: UserDb.self, id: 11, uid: 5403898587333376512)
+        try entityBuilder.addProperty(name: "idObjectBox", type: UInt64.entityPropertyType, flags: [.id], id: 1, uid: 3410206595239616256)
+        try entityBuilder.addProperty(name: "id", type: Int.entityPropertyType, id: 2, uid: 3215259498874509312)
+        try entityBuilder.addProperty(name: "name", type: String.entityPropertyType, id: 3, uid: 6153532968214726400)
+        try entityBuilder.addProperty(name: "username", type: String.entityPropertyType, id: 4, uid: 872028903469685504)
+        try entityBuilder.addProperty(name: "email", type: String.entityPropertyType, id: 5, uid: 2304072031187689984)
+        try entityBuilder.addProperty(name: "phone", type: String.entityPropertyType, id: 6, uid: 1034370072078116096)
+        try entityBuilder.addProperty(name: "website", type: String.entityPropertyType, id: 7, uid: 3208706971348692992)
 
-        try entityBuilder.lastProperty(id: 7, uid: 2849615842124321280)
+        try entityBuilder.lastProperty(id: 7, uid: 3208706971348692992)
     }
 }
 
-extension User {
+extension UserDb {
     /// Generated entity property information.
     ///
     /// You may want to use this in queries to specify fetch conditions, for example:
     ///
-    ///     box.query { User.idObjectBox == myId }
-    internal static var idObjectBox: Property<User, UInt64, UInt64> { return Property<User, UInt64, UInt64>(propertyId: 7, isPrimaryKey: true) }
+    ///     box.query { UserDb.idObjectBox == myId }
+    internal static var idObjectBox: Property<UserDb, UInt64, UInt64> { return Property<UserDb, UInt64, UInt64>(propertyId: 1, isPrimaryKey: true) }
     /// Generated entity property information.
     ///
     /// You may want to use this in queries to specify fetch conditions, for example:
     ///
-    ///     box.query { User.id > 1234 }
-    internal static var id: Property<User, Int, Void> { return Property<User, Int, Void>(propertyId: 1, isPrimaryKey: false) }
+    ///     box.query { UserDb.id > 1234 }
+    internal static var id: Property<UserDb, Int, Void> { return Property<UserDb, Int, Void>(propertyId: 2, isPrimaryKey: false) }
     /// Generated entity property information.
     ///
     /// You may want to use this in queries to specify fetch conditions, for example:
     ///
-    ///     box.query { User.name.startsWith("X") }
-    internal static var name: Property<User, String, Void> { return Property<User, String, Void>(propertyId: 2, isPrimaryKey: false) }
+    ///     box.query { UserDb.name.startsWith("X") }
+    internal static var name: Property<UserDb, String, Void> { return Property<UserDb, String, Void>(propertyId: 3, isPrimaryKey: false) }
     /// Generated entity property information.
     ///
     /// You may want to use this in queries to specify fetch conditions, for example:
     ///
-    ///     box.query { User.username.startsWith("X") }
-    internal static var username: Property<User, String, Void> { return Property<User, String, Void>(propertyId: 3, isPrimaryKey: false) }
+    ///     box.query { UserDb.username.startsWith("X") }
+    internal static var username: Property<UserDb, String, Void> { return Property<UserDb, String, Void>(propertyId: 4, isPrimaryKey: false) }
     /// Generated entity property information.
     ///
     /// You may want to use this in queries to specify fetch conditions, for example:
     ///
-    ///     box.query { User.email.startsWith("X") }
-    internal static var email: Property<User, String, Void> { return Property<User, String, Void>(propertyId: 4, isPrimaryKey: false) }
+    ///     box.query { UserDb.email.startsWith("X") }
+    internal static var email: Property<UserDb, String, Void> { return Property<UserDb, String, Void>(propertyId: 5, isPrimaryKey: false) }
     /// Generated entity property information.
     ///
     /// You may want to use this in queries to specify fetch conditions, for example:
     ///
-    ///     box.query { User.phone.startsWith("X") }
-    internal static var phone: Property<User, String, Void> { return Property<User, String, Void>(propertyId: 5, isPrimaryKey: false) }
+    ///     box.query { UserDb.phone.startsWith("X") }
+    internal static var phone: Property<UserDb, String, Void> { return Property<UserDb, String, Void>(propertyId: 6, isPrimaryKey: false) }
     /// Generated entity property information.
     ///
     /// You may want to use this in queries to specify fetch conditions, for example:
     ///
-    ///     box.query { User.website.startsWith("X") }
-    internal static var website: Property<User, String, Void> { return Property<User, String, Void>(propertyId: 6, isPrimaryKey: false) }
+    ///     box.query { UserDb.website.startsWith("X") }
+    internal static var website: Property<UserDb, String, Void> { return Property<UserDb, String, Void>(propertyId: 7, isPrimaryKey: false) }
 
     fileprivate func __setId(identifier: ObjectBox.Id) {
         self.idObjectBox = UInt64(identifier)
     }
 }
 
-extension ObjectBox.Property where E == User {
+extension ObjectBox.Property where E == UserDb {
     /// Generated entity property information.
     ///
     /// You may want to use this in queries to specify fetch conditions, for example:
     ///
     ///     box.query { .idObjectBox == myId }
 
-    internal static var idObjectBox: Property<User, UInt64, UInt64> { return Property<User, UInt64, UInt64>(propertyId: 7, isPrimaryKey: true) }
+    internal static var idObjectBox: Property<UserDb, UInt64, UInt64> { return Property<UserDb, UInt64, UInt64>(propertyId: 1, isPrimaryKey: true) }
 
     /// Generated entity property information.
     ///
@@ -103,7 +103,7 @@ extension ObjectBox.Property where E == User {
     ///
     ///     box.query { .id > 1234 }
 
-    internal static var id: Property<User, Int, Void> { return Property<User, Int, Void>(propertyId: 1, isPrimaryKey: false) }
+    internal static var id: Property<UserDb, Int, Void> { return Property<UserDb, Int, Void>(propertyId: 2, isPrimaryKey: false) }
 
     /// Generated entity property information.
     ///
@@ -111,7 +111,7 @@ extension ObjectBox.Property where E == User {
     ///
     ///     box.query { .name.startsWith("X") }
 
-    internal static var name: Property<User, String, Void> { return Property<User, String, Void>(propertyId: 2, isPrimaryKey: false) }
+    internal static var name: Property<UserDb, String, Void> { return Property<UserDb, String, Void>(propertyId: 3, isPrimaryKey: false) }
 
     /// Generated entity property information.
     ///
@@ -119,7 +119,7 @@ extension ObjectBox.Property where E == User {
     ///
     ///     box.query { .username.startsWith("X") }
 
-    internal static var username: Property<User, String, Void> { return Property<User, String, Void>(propertyId: 3, isPrimaryKey: false) }
+    internal static var username: Property<UserDb, String, Void> { return Property<UserDb, String, Void>(propertyId: 4, isPrimaryKey: false) }
 
     /// Generated entity property information.
     ///
@@ -127,7 +127,7 @@ extension ObjectBox.Property where E == User {
     ///
     ///     box.query { .email.startsWith("X") }
 
-    internal static var email: Property<User, String, Void> { return Property<User, String, Void>(propertyId: 4, isPrimaryKey: false) }
+    internal static var email: Property<UserDb, String, Void> { return Property<UserDb, String, Void>(propertyId: 5, isPrimaryKey: false) }
 
     /// Generated entity property information.
     ///
@@ -135,7 +135,7 @@ extension ObjectBox.Property where E == User {
     ///
     ///     box.query { .phone.startsWith("X") }
 
-    internal static var phone: Property<User, String, Void> { return Property<User, String, Void>(propertyId: 5, isPrimaryKey: false) }
+    internal static var phone: Property<UserDb, String, Void> { return Property<UserDb, String, Void>(propertyId: 6, isPrimaryKey: false) }
 
     /// Generated entity property information.
     ///
@@ -143,14 +143,14 @@ extension ObjectBox.Property where E == User {
     ///
     ///     box.query { .website.startsWith("X") }
 
-    internal static var website: Property<User, String, Void> { return Property<User, String, Void>(propertyId: 6, isPrimaryKey: false) }
+    internal static var website: Property<UserDb, String, Void> { return Property<UserDb, String, Void>(propertyId: 7, isPrimaryKey: false) }
 
 }
 
 
-/// Generated service type to handle persisting and reading entity data. Exposed through `User.EntityBindingType`.
-internal class UserBinding: ObjectBox.EntityBinding {
-    internal typealias EntityType = User
+/// Generated service type to handle persisting and reading entity data. Exposed through `UserDb.EntityBindingType`.
+internal class UserDbBinding: ObjectBox.EntityBinding {
+    internal typealias EntityType = UserDb
     internal typealias IdType = UInt64
 
     internal required init() {}
@@ -173,25 +173,25 @@ internal class UserBinding: ObjectBox.EntityBinding {
         let propertyOffset_phone = propertyCollector.prepare(string: entity.phone)
         let propertyOffset_website = propertyCollector.prepare(string: entity.website)
 
-        propertyCollector.collect(id, at: 2 + 2 * 7)
-        propertyCollector.collect(entity.id, at: 2 + 2 * 1)
-        propertyCollector.collect(dataOffset: propertyOffset_name, at: 2 + 2 * 2)
-        propertyCollector.collect(dataOffset: propertyOffset_username, at: 2 + 2 * 3)
-        propertyCollector.collect(dataOffset: propertyOffset_email, at: 2 + 2 * 4)
-        propertyCollector.collect(dataOffset: propertyOffset_phone, at: 2 + 2 * 5)
-        propertyCollector.collect(dataOffset: propertyOffset_website, at: 2 + 2 * 6)
+        propertyCollector.collect(id, at: 2 + 2 * 1)
+        propertyCollector.collect(entity.id, at: 2 + 2 * 2)
+        propertyCollector.collect(dataOffset: propertyOffset_name, at: 2 + 2 * 3)
+        propertyCollector.collect(dataOffset: propertyOffset_username, at: 2 + 2 * 4)
+        propertyCollector.collect(dataOffset: propertyOffset_email, at: 2 + 2 * 5)
+        propertyCollector.collect(dataOffset: propertyOffset_phone, at: 2 + 2 * 6)
+        propertyCollector.collect(dataOffset: propertyOffset_website, at: 2 + 2 * 7)
     }
 
     internal func createEntity(entityReader: ObjectBox.FlatBufferReader, store: ObjectBox.Store) -> EntityType {
-        let entity = User()
+        let entity = UserDb()
 
-        entity.idObjectBox = entityReader.read(at: 2 + 2 * 7)
-        entity.id = entityReader.read(at: 2 + 2 * 1)
-        entity.name = entityReader.read(at: 2 + 2 * 2)
-        entity.username = entityReader.read(at: 2 + 2 * 3)
-        entity.email = entityReader.read(at: 2 + 2 * 4)
-        entity.phone = entityReader.read(at: 2 + 2 * 5)
-        entity.website = entityReader.read(at: 2 + 2 * 6)
+        entity.idObjectBox = entityReader.read(at: 2 + 2 * 1)
+        entity.id = entityReader.read(at: 2 + 2 * 2)
+        entity.name = entityReader.read(at: 2 + 2 * 3)
+        entity.username = entityReader.read(at: 2 + 2 * 4)
+        entity.email = entityReader.read(at: 2 + 2 * 5)
+        entity.phone = entityReader.read(at: 2 + 2 * 6)
+        entity.website = entityReader.read(at: 2 + 2 * 7)
 
         return entity
     }
@@ -208,8 +208,8 @@ fileprivate func optConstruct<T: RawRepresentable>(_ type: T.Type, rawValue: T.R
 
 fileprivate func cModel() throws -> OpaquePointer {
     let modelBuilder = try ObjectBox.ModelBuilder()
-    try User.buildEntity(modelBuilder: modelBuilder)
-    modelBuilder.lastEntity(id: 10, uid: 3879369699653537024)
+    try UserDb.buildEntity(modelBuilder: modelBuilder)
+    modelBuilder.lastEntity(id: 11, uid: 5403898587333376512)
     modelBuilder.lastIndex(id: 4, uid: 3370545536847125760)
     return modelBuilder.finish()
 }

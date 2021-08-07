@@ -10,7 +10,7 @@ import ObjectBox
 
 class DetailViewModel: ObservableObject {
     
-    var userBox: Box<User>? = nil
+    var userBox: Box<UserDb>? = nil
     
     @Published var id : Int = 0
     @Published var name : String = ""
@@ -24,7 +24,7 @@ class DetailViewModel: ObservableObject {
             let directory = appSupport.appendingPathComponent(Constants.dbName)
             try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true, attributes: nil)
             let store = try Store(directoryPath: directory.path)
-            userBox = store.box(for: User.self)
+            userBox = store.box(for: UserDb.self)
         } catch {
             print("DetailViewModel # error init \(error)")
         }

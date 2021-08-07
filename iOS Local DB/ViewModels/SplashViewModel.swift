@@ -21,10 +21,21 @@ class SplashViewModel {
                     let directory = appSupport.appendingPathComponent(Constants.dbName)
                     try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true, attributes: nil)
                     let store = try Store(directoryPath: directory.path)
-                    let userBox = store.box(for: User.self)
+                    let userBox = store.box(for: UserDb.self)
                     try userBox.removeAll()
                     print("SplashViewModel # users count \(data.count)")
-                    try userBox.put(data)
+                    var listUserDb = [UserDb]()
+                    data.forEach{ user in
+                        let userDb = UserDb()
+                        userDb.id = user.id
+                        userDb.name = user.name
+                        userDb.username = user.username
+                        userDb.email = user.email
+                        userDb.phone = user.phone
+                        userDb.website = user.website
+                        listUserDb.append(userDb)
+                    }
+                    try userBox.put(listUserDb)
                     doneLoading()
                 } catch {
                     print("SplashViewModel # error \(error)")

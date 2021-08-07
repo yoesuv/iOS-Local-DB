@@ -8,11 +8,9 @@
 import Foundation
 import ObjectBox
 
-// objectbox: entity
+
 class User: Codable, Identifiable {
     
-    // objectbox: id
-    var idObjectBox: UInt64 = 0
     var id: Int = 0
     var name: String = ""
     var username: String = ""

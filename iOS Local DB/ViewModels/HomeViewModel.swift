@@ -10,8 +10,8 @@ import ObjectBox
 
 class HomeViewModel: ObservableObject {
     
-    @Published var users = [User]()
-    var userBox: Box<User>? = nil
+    @Published var users = [UserDb]()
+    var userBox: Box<UserDb>? = nil
     
     init() {
         do {
@@ -20,7 +20,7 @@ class HomeViewModel: ObservableObject {
             let directory = appSupport.appendingPathComponent(Constants.dbName)
             try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true, attributes: nil)
             let store = try Store(directoryPath: directory.path)
-            userBox = store.box(for: User.self)
+            userBox = store.box(for: UserDb.self)
         } catch {
             print("HomeViewModel # error init \(error)")
         }
