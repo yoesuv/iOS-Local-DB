@@ -19,11 +19,7 @@ class DetailViewModel: ObservableObject {
     
     init() {
         do {
-            let appSupport = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
-                .appendingPathComponent(Bundle.main.bundleIdentifier!)
-            let directory = appSupport.appendingPathComponent(Constants.dbName)
-            try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true, attributes: nil)
-            let store = try Store(directoryPath: directory.path)
+            let store = try AppBox.boxInit(dbName: Constants.dbName)
             userBox = store.box(for: UserDb.self)
         } catch {
             print("DetailViewModel # error init \(error)")
