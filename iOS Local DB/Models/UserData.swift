@@ -6,30 +6,13 @@
 //
 
 import Foundation
-import ObjectBox
 
-
-class User: Codable, Identifiable {
-    
-    var id: Int = 0
-    var name: String = ""
-    var username: String = ""
-    var email: String = ""
-    var phone: String = ""
-    var website: String = ""
-    
-    required init() {
-        
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case name
-        case username
-        case email
-        case phone
-        case website
-    }
+struct User: Codable {
+    let id: Int
+    let name, username, email, phone: String
+    let website: String
+    let address: Address
+    let company: Company
 }
 
 struct Address: Codable {
