@@ -16,6 +16,10 @@ class DetailViewModel: ObservableObject {
     @Published var name : String = ""
     @Published var username : String = ""
     @Published var email : String = ""
+    
+    @Published var street : String = ""
+    @Published var suite : String = ""
+    @Published var city : String = ""
 
     @Published var companyName : String = ""
     @Published var companyCatchPhrase : String = ""
@@ -39,6 +43,13 @@ class DetailViewModel: ObservableObject {
                 self.name = data.name
                 self.username = data.username
                 self.email = data.email
+                
+                if let address = data.address.target {
+                    self.street = address.street
+                    self.suite = address.suite
+                    self.city = address.city
+                }
+                
                 if let company = data.company.target {
                     self.companyName = company.name
                     self.companyCatchPhrase = company.catchPhrase

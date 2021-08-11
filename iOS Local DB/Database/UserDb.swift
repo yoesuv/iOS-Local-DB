@@ -19,8 +19,34 @@ class UserDb: Identifiable {
     var email: String = ""
     var phone: String = ""
     var website: String = ""
+    var address: ToOne<AddressDb> = nil
     var company: ToOne<CompanyDb> = nil
     
+}
+
+class AddressDb: Entity {
+    
+    var id: Id = 0
+    var street: String = ""
+    var suite: String = ""
+    var city: String = ""
+    var zipcode: String = ""
+    var geo: ToOne<GeoDb> = nil
+    
+    required init() {
+        
+    }
+}
+
+class GeoDb: Entity {
+    
+    var id: Id = 0
+    var lat: String = ""
+    var lng: String = ""
+    
+    required init() {
+        
+    }
 }
 
 class CompanyDb: Entity {

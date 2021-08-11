@@ -30,6 +30,18 @@ class SplashViewModel {
                         userDb.phone = user.phone
                         userDb.website = user.website
                         
+                        let addressDb = AddressDb()
+                        addressDb.street = user.address.street
+                        addressDb.suite = user.address.suite
+                        addressDb.city = user.address.city
+                        addressDb.zipcode = user.address.zipcode
+                        userDb.address.target = addressDb
+                        
+                        let geoDb = GeoDb()
+                        geoDb.lat = user.address.geo.lat
+                        geoDb.lng = user.address.geo.lng
+                        addressDb.geo.target = geoDb
+                        
                         let companyDb = CompanyDb()
                         companyDb.name = user.company.name
                         companyDb.catchPhrase = user.company.catchPhrase
