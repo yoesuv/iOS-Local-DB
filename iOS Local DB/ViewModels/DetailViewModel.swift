@@ -16,6 +16,11 @@ class DetailViewModel: ObservableObject {
     @Published var name : String = ""
     @Published var username : String = ""
     @Published var email : String = ""
+
+    @Published var companyName : String = ""
+    @Published var companyCatchPhrase : String = ""
+    @Published var companyBusiness : String = ""
+    
     
     init() {
         do {
@@ -34,6 +39,11 @@ class DetailViewModel: ObservableObject {
                 self.name = data.name
                 self.username = data.username
                 self.email = data.email
+                if let company = data.company.target {
+                    self.companyName = company.name
+                    self.companyCatchPhrase = company.catchPhrase
+                    self.companyBusiness = company.bs
+                }
             }
         } catch {
             print("DetailViewModel # error load user \(error)")

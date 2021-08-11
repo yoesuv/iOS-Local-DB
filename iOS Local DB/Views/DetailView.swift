@@ -16,10 +16,19 @@ struct DetailView: View {
     var body: some View {
         GeometryReader { geo in
             VStack(alignment: .leading){
+                // User
                 Text("ID : \(viewModel.id)")
                 Text("Name : \(viewModel.name)")
                 Text("Username : \(viewModel.username)")
                 Text("Email : \(viewModel.email)")
+                // Company
+                Text("Company")
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                    .padding(.top, 10)
+                Text("Name : \(viewModel.companyName)")
+                Text("Catch Phrase : \(viewModel.companyCatchPhrase)")
+                Text("Business : \(viewModel.companyBusiness)")
             }.frame(maxHeight: geo.size.height, alignment: .topLeading)
             .padding(10)
             .onAppear {

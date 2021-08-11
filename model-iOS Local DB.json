@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "11:5403898587333376512",
-      "lastPropertyId": "7:3208706971348692992",
+      "lastPropertyId": "8:1568567613832890624",
       "name": "UserDb",
       "properties": [
         {
@@ -43,13 +43,50 @@
           "id": "7:3208706971348692992",
           "name": "website",
           "type": 9
+        },
+        {
+          "flags": 8,
+          "id": "8:1568567613832890624",
+          "indexId": "5:7259545675481127168",
+          "name": "company",
+          "relationTarget": "CompanyDb",
+          "type": 11
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "12:7626066508417776128",
+      "lastPropertyId": "4:4250988005683281920",
+      "name": "CompanyDb",
+      "properties": [
+        {
+          "flags": 1,
+          "id": "1:34726891832226304",
+          "name": "id",
+          "type": 6
+        },
+        {
+          "id": "2:8066995443899789568",
+          "name": "name",
+          "type": 9
+        },
+        {
+          "id": "3:1705182063379111936",
+          "name": "catchPhrase",
+          "type": 9
+        },
+        {
+          "id": "4:4250988005683281920",
+          "name": "bs",
+          "type": 9
         }
       ],
       "relations": []
     }
   ],
-  "lastEntityId": "11:5403898587333376512",
-  "lastIndexId": "4:3370545536847125760",
+  "lastEntityId": "12:7626066508417776128",
+  "lastIndexId": "5:7259545675481127168",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
   "modelVersion": 5,

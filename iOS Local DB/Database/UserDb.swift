@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import ObjectBox
 
 // objectbox: entity
 class UserDb: Identifiable {
@@ -18,5 +19,18 @@ class UserDb: Identifiable {
     var email: String = ""
     var phone: String = ""
     var website: String = ""
+    var company: ToOne<CompanyDb> = nil
     
+}
+
+class CompanyDb: Entity {
+    
+    var id: Id = 0
+    var name: String = ""
+    var catchPhrase: String = ""
+    var bs: String = ""
+    
+    required init() {
+        
+    }
 }

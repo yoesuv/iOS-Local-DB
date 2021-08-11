@@ -29,6 +29,13 @@ class SplashViewModel {
                         userDb.email = user.email
                         userDb.phone = user.phone
                         userDb.website = user.website
+                        
+                        let companyDb = CompanyDb()
+                        companyDb.name = user.company.name
+                        companyDb.catchPhrase = user.company.catchPhrase
+                        companyDb.bs = user.company.bs
+                        userDb.company.target = companyDb
+                        
                         listUserDb.append(userDb)
                     }
                     try userBox.put(listUserDb)
