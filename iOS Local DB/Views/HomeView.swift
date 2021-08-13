@@ -12,6 +12,12 @@ struct HomeView: View {
     @ObservedObject var viewModel = HomeViewModel()
     @State var showAlertDelete = false
     
+    init() {
+        // https://newbedev.com/swiftui-custom-navigation-bar-with-list
+        UINavigationBar.appearance().barTintColor = .systemPink
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+    }
+    
     var body: some View {
         NavigationView {
             List {
@@ -37,7 +43,8 @@ struct HomeView: View {
             .navigationBarTitle(Text("List User"), displayMode: .inline)
             .navigationBarItems(trailing: Button("Delete All", action: {
                 showAlertDelete.toggle()
-            }))
+            }).foregroundColor(.white))
+        
         }
         .navigationBarHidden(true)
         .onAppear(perform: {

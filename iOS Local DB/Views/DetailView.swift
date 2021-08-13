@@ -32,7 +32,7 @@ struct DetailView: View {
                 self.presentation.wrappedValue.dismiss()
             }) {
                 Image(systemName: "chevron.left")
-            }.foregroundColor(.black))
+            }.foregroundColor(.white))
             .onAppear {
                 viewModel.loadUser(id: idObjectBox)
             }
