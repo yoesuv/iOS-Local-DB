@@ -13,6 +13,8 @@ struct DetailView: View {
     
     @ObservedObject var viewModel = DetailViewModel()
     
+    @Environment(\.presentationMode) var presentation
+    
     var body: some View {
         GeometryReader { geo in
             VStack(alignment: .leading){
@@ -24,6 +26,13 @@ struct DetailView: View {
                 companyLayer
             }.frame(maxHeight: geo.size.height, alignment: .topLeading)
             .padding(10)
+            .navigationBarTitle(Text("Detail User"), displayMode: .inline)
+            .navigationBarBackButtonHidden(true)
+            .navigationBarItems(leading: Button(action: {
+                self.presentation.wrappedValue.dismiss()
+            }) {
+                Image(systemName: "chevron.left")
+            }.foregroundColor(.black))
             .onAppear {
                 viewModel.loadUser(id: idObjectBox)
             }
