@@ -30,7 +30,9 @@ struct SplashView: View {
         }
         .onAppear(perform: {
             viewModel.loadUsers {
-                isActive = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    isActive = true
+                }
             }
         })
     }
