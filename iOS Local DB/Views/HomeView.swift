@@ -14,7 +14,7 @@ struct HomeView: View {
     
     init() {
         // https://newbedev.com/swiftui-custom-navigation-bar-with-list
-        UINavigationBar.appearance().barTintColor = .systemPink
+        UINavigationBar.appearance().barTintColor = UIColor.init(Color("Pink500"))
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
     }
     
