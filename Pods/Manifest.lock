@@ -1,0 +1,20 @@
+PODS:
+  - Alamofire (5.4.3)
+  - ObjectBox (1.6.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - ObjectBox
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - ObjectBox
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  ObjectBox: a181cc5fb47e0a6ec60754d34dc49f40dc17829e
+
+PODFILE CHECKSUM: f98784f67376a3e7e16fa92627ffd6811b409e57
+
+COCOAPODS: 1.10.0
