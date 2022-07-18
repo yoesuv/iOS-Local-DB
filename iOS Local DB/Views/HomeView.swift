@@ -13,9 +13,14 @@ struct HomeView: View {
     @State var showAlertDelete = false
     
     init() {
-        // https://newbedev.com/swiftui-custom-navigation-bar-with-list
-        UINavigationBar.appearance().barTintColor = UIColor.init(Color("Pink500"))
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.shadowColor = .clear
+        navBarAppearance.backgroundColor = UIColor.init(Color("Pink500"))
+        navBarAppearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
+        UINavigationBar.appearance().standardAppearance = navBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        UINavigationBar.appearance().compactAppearance = navBarAppearance
     }
     
     var body: some View {
@@ -46,6 +51,7 @@ struct HomeView: View {
             }).foregroundColor(.white))
         
         }
+        .navigationViewStyle(.stack)
         .navigationBarHidden(true)
         .onAppear(perform: {
             viewModel.loadUsers()

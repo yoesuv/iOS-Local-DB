@@ -27,11 +27,14 @@ struct SplashView: View {
                         EmptyView()
                     })
             }
+            .navigationBarHidden(true)
         }
         .onAppear(perform: {
             viewModel.loadUsers {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    isActive = true
+                    withAnimation {
+                        isActive = true
+                    }
                 }
             }
         })
