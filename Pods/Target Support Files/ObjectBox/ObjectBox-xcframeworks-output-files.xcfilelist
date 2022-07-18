@@ -1,1 +1,1 @@
-${PODS_XCFRAMEWORKS_BUILD_DIR}/ObjectBox
+${PODS_XCFRAMEWORKS_BUILD_DIR}/ObjectBox/ObjectBox.framework

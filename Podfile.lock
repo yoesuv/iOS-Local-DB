@@ -3,7 +3,7 @@ PODS:
   - ObjectBox (1.6.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 5.2)
+  - Alamofire
   - ObjectBox
 
 SPEC REPOS:
@@ -15,6 +15,6 @@ SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   ObjectBox: a181cc5fb47e0a6ec60754d34dc49f40dc17829e
 
-PODFILE CHECKSUM: f98784f67376a3e7e16fa92627ffd6811b409e57
+PODFILE CHECKSUM: 3ace2f0c421f8ce75dee913e9fe35a2daee3a065
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.11.3
