@@ -12,7 +12,7 @@ class AppBox {
     
     static func boxInit(dbName: String) throws -> Store {
         do {
-            let appSupport = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+            let appSupport = try FileManager.default.url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
                 .appendingPathComponent(Bundle.main.bundleIdentifier!)
             let directory = appSupport.appendingPathComponent(dbName)
             try FileManager.default.createDirectory(at: directory, withIntermediateDirectories: true, attributes: nil)
