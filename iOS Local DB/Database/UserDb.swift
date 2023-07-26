@@ -9,7 +9,7 @@ import Foundation
 import ObjectBox
 
 // objectbox: entity
-class UserDb: Identifiable {
+class UserDb: Entity, Identifiable {
     
     // objectbox: id
     var idObjectBox: UInt64 = 0
@@ -21,6 +21,10 @@ class UserDb: Identifiable {
     var website: String = ""
     var address: ToOne<AddressDb> = nil
     var company: ToOne<CompanyDb> = nil
+    
+    required init() {
+        
+    }
     
 }
 

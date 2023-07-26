@@ -7,7 +7,6 @@ import Foundation
 
 // MARK: - Entity metadata
 
-extension UserDb: ObjectBox.Entity {}
 
 extension AddressDb: ObjectBox.__EntityRelatable {
     internal typealias EntityType = AddressDb
