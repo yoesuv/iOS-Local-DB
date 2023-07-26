@@ -8,21 +8,12 @@
 import Foundation
 import ObjectBox
 
-class HomeViewModel: ObservableObject {
+class HomeViewModel: BoxService, ObservableObject  {
     
     @Published var users = [UserDb]()
-    var userBox: Box<UserDb>? = nil
-    
-    init() {
-        do {
-            let store = try AppBox.boxInit(dbName: Constants.dbName)
-            userBox = store.box(for: UserDb.self)
-        } catch {
-            print("HomeViewModel # error init \(error)")
-        }
-    }
     
     func loadUsers() {
+        let userBox = self.store?.box(for: UserDb.self)
         if let box = userBox {
             do {
                 print("HomeViewModel # user count \(try box.all().count)")
@@ -34,6 +25,7 @@ class HomeViewModel: ObservableObject {
     }
     
     func deleteUser(id: UInt64) {
+        let userBox = self.store?.box(for: UserDb.self)
         if let box = userBox {
             do {
                 try box.remove(id)
@@ -44,6 +36,7 @@ class HomeViewModel: ObservableObject {
     }
     
     func deleteAllUser() {
+        let userBox = self.store?.box(for: UserDb.self)
         if let box = userBox {
             do {
                 try box.removeAll()

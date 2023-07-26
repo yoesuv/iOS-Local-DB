@@ -17,7 +17,7 @@
 		AB5D1FBE26B50BDA0024C678 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D1FBD26B50BDA0024C678 /* NetworkService.swift */; };
 		AB5D1FC226B50CDC0024C678 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D1FC126B50CDC0024C678 /* SplashViewModel.swift */; };
 		AB65FBE826BE0A3D00A2A76A /* UserDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65FBE726BE0A3D00A2A76A /* UserDb.swift */; };
-		AB65FBEA26BE2A2000A2A76A /* AppBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65FBE926BE2A2000A2A76A /* AppBox.swift */; };
+		AB65FBEA26BE2A2000A2A76A /* BoxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65FBE926BE2A2000A2A76A /* BoxService.swift */; };
 		ABF7E0CB26ACDF0D00F76CE0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7E0CA26ACDF0D00F76CE0 /* HomeViewModel.swift */; };
 		ABF7E0CE26ACE24500F76CE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7E0CD26ACE24500F76CE0 /* Constants.swift */; };
 		ABF893CF26A673A2006D5A34 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF893CE26A673A2006D5A34 /* SplashView.swift */; };
@@ -37,7 +37,7 @@
 		AB5D1FBD26B50BDA0024C678 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		AB5D1FC126B50CDC0024C678 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		AB65FBE726BE0A3D00A2A76A /* UserDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDb.swift; sourceTree = "<group>"; };
-		AB65FBE926BE2A2000A2A76A /* AppBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBox.swift; sourceTree = "<group>"; };
+		AB65FBE926BE2A2000A2A76A /* BoxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxService.swift; sourceTree = "<group>"; };
 		ABF7E0CA26ACDF0D00F76CE0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		ABF7E0CD26ACE24500F76CE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ABF893CE26A673A2006D5A34 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				AB65FBE726BE0A3D00A2A76A /* UserDb.swift */,
-				AB65FBE926BE2A2000A2A76A /* AppBox.swift */,
+				AB65FBE926BE2A2000A2A76A /* BoxService.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 				ABF893CF26A673A2006D5A34 /* SplashView.swift in Sources */,
 				6921EA92197B90C6ACD696DA /* EntityInfo-iOS Local DB.generated.swift in Sources */,
 				AB1E502D26BD3B1300DE00C7 /* DetailViewModel.swift in Sources */,
-				AB65FBEA26BE2A2000A2A76A /* AppBox.swift in Sources */,
+				AB65FBEA26BE2A2000A2A76A /* BoxService.swift in Sources */,
 				ABF7E0CE26ACE24500F76CE0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,7 +8,7 @@
 import Foundation
 import ObjectBox
 
-class DetailViewModel: ObservableObject {
+class DetailViewModel: BoxService, ObservableObject {
     
     var userBox: Box<UserDb>? = nil
     
@@ -26,17 +26,9 @@ class DetailViewModel: ObservableObject {
     @Published var companyBusiness : String = ""
     
     
-    init() {
-        do {
-            let store = try AppBox.boxInit(dbName: Constants.dbName)
-            userBox = store.box(for: UserDb.self)
-        } catch {
-            print("DetailViewModel # error init \(error)")
-        }
-    }
-    
     func loadUser(id: UInt64?) {
         do {
+            let userBox = store?.box(for: UserDb.self)
             let boxUser = try userBox?.get(id!)
             if let data = boxUser {
                 self.id = data.id
