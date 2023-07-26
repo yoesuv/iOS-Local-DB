@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import ObjectBox
 
 class SplashViewModel: BoxService {
     
@@ -16,7 +15,7 @@ class SplashViewModel: BoxService {
         service.fetchUsers { users in
             if let data = users {
                 do {
-                    let userBox = self.store?.box(for: UserDb.self)
+                    let userBox = self.box(entity: UserDb.self)
                     try userBox?.removeAll()
                     print("SplashViewModel # users count \(data.count)")
                     var listUserDb = [UserDb]()

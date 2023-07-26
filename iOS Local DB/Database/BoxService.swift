@@ -10,7 +10,7 @@ import ObjectBox
 
 class BoxService {
     
-    var store: Store?
+    private var store: Store?
     
     init() {
         do {
@@ -27,5 +27,11 @@ class BoxService {
             print("BoxService # ERROR \(error)")
         }
     }
+    
+    func box<E>(entity: E.Type = E.self) -> ObjectBox.Box<E>?  where E: ObjectBox.EntityInspectable,
+                                                                     E: ObjectBox.__EntityRelatable,
+                                                                     E == E.EntityBindingType.EntityType {
+                                                                         return store?.box(for: E.self)
+                                                                     }
     
 }
