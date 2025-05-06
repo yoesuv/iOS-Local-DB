@@ -6,21 +6,11 @@
 //
 
 import Foundation
-import ObjectBox
 
-class HomeViewModel: ObservableObject {
+class HomeViewModel: ObservableObject  {
     
     @Published var users = [UserDb]()
-    var userBox: Box<UserDb>? = nil
-    
-    init() {
-        do {
-            let store = try AppBox.boxInit(dbName: Constants.dbName)
-            userBox = store.box(for: UserDb.self)
-        } catch {
-            print("HomeViewModel # error init \(error)")
-        }
-    }
+    let userBox = BoxService.shared.box(entity: UserDb.self)
     
     func loadUsers() {
         if let box = userBox {

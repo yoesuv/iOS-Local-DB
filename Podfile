@@ -6,7 +6,7 @@ target 'iOS Local DB' do
   use_frameworks!
 
   # Pods for iOS Local DB
-  pod 'Alamofire'
-  pod 'ObjectBox'
+  pod 'Alamofire', '~> 5.10.2'
+  pod 'ObjectBox', '~> 4.2.0'
 
 end

@@ -7,7 +7,6 @@ import Foundation
 
 // MARK: - Entity metadata
 
-extension UserDb: ObjectBox.Entity {}
 
 extension AddressDb: ObjectBox.__EntityRelatable {
     internal typealias EntityType = AddressDb
@@ -27,12 +26,12 @@ extension AddressDb: ObjectBox.EntityInspectable {
 
     fileprivate static func buildEntity(modelBuilder: ObjectBox.ModelBuilder) throws {
         let entityBuilder = try modelBuilder.entityBuilder(for: AddressDb.self, id: 13, uid: 1001987354674273024)
-        try entityBuilder.addProperty(name: "id", type: Id.entityPropertyType, flags: [.id], id: 1, uid: 4048468922405682176)
-        try entityBuilder.addProperty(name: "street", type: String.entityPropertyType, id: 2, uid: 4622745140422698240)
-        try entityBuilder.addProperty(name: "suite", type: String.entityPropertyType, id: 3, uid: 4249721985145644800)
-        try entityBuilder.addProperty(name: "city", type: String.entityPropertyType, id: 4, uid: 5318974339876363776)
-        try entityBuilder.addProperty(name: "zipcode", type: String.entityPropertyType, id: 5, uid: 5008515730426547456)
-        try entityBuilder.addToOneRelation(name: "geo", targetEntityInfo: ToOne<GeoDb>.Target.entityInfo, id: 6, uid: 8899713208206653440, indexId: 6, indexUid: 3607816058261967872)
+        try entityBuilder.addProperty(name: "id", type: PropertyType.long, flags: [.id], id: 1, uid: 4048468922405682176)
+        try entityBuilder.addProperty(name: "street", type: PropertyType.string, id: 2, uid: 4622745140422698240)
+        try entityBuilder.addProperty(name: "suite", type: PropertyType.string, id: 3, uid: 4249721985145644800)
+        try entityBuilder.addProperty(name: "city", type: PropertyType.string, id: 4, uid: 5318974339876363776)
+        try entityBuilder.addProperty(name: "zipcode", type: PropertyType.string, id: 5, uid: 5008515730426547456)
+        try entityBuilder.addToOneRelation(name: "geo", targetEntityInfo: ToOne<GeoDb>.Target.entityInfo, flags: [.indexed, .indexPartialSkipZero], id: 6, uid: 8899713208206653440, indexId: 6, indexUid: 3607816058261967872)
 
         try entityBuilder.lastProperty(id: 6, uid: 8899713208206653440)
     }
@@ -202,10 +201,10 @@ extension CompanyDb: ObjectBox.EntityInspectable {
 
     fileprivate static func buildEntity(modelBuilder: ObjectBox.ModelBuilder) throws {
         let entityBuilder = try modelBuilder.entityBuilder(for: CompanyDb.self, id: 12, uid: 7626066508417776128)
-        try entityBuilder.addProperty(name: "id", type: Id.entityPropertyType, flags: [.id], id: 1, uid: 34726891832226304)
-        try entityBuilder.addProperty(name: "name", type: String.entityPropertyType, id: 2, uid: 8066995443899789568)
-        try entityBuilder.addProperty(name: "catchPhrase", type: String.entityPropertyType, id: 3, uid: 1705182063379111936)
-        try entityBuilder.addProperty(name: "bs", type: String.entityPropertyType, id: 4, uid: 4250988005683281920)
+        try entityBuilder.addProperty(name: "id", type: PropertyType.long, flags: [.id], id: 1, uid: 34726891832226304)
+        try entityBuilder.addProperty(name: "name", type: PropertyType.string, id: 2, uid: 8066995443899789568)
+        try entityBuilder.addProperty(name: "catchPhrase", type: PropertyType.string, id: 3, uid: 1705182063379111936)
+        try entityBuilder.addProperty(name: "bs", type: PropertyType.string, id: 4, uid: 4250988005683281920)
 
         try entityBuilder.lastProperty(id: 4, uid: 4250988005683281920)
     }
@@ -339,9 +338,9 @@ extension GeoDb: ObjectBox.EntityInspectable {
 
     fileprivate static func buildEntity(modelBuilder: ObjectBox.ModelBuilder) throws {
         let entityBuilder = try modelBuilder.entityBuilder(for: GeoDb.self, id: 14, uid: 2248822657254599936)
-        try entityBuilder.addProperty(name: "id", type: Id.entityPropertyType, flags: [.id], id: 1, uid: 1178736466996739328)
-        try entityBuilder.addProperty(name: "lat", type: String.entityPropertyType, id: 2, uid: 7274864887966152192)
-        try entityBuilder.addProperty(name: "lng", type: String.entityPropertyType, id: 3, uid: 4358351430157789952)
+        try entityBuilder.addProperty(name: "id", type: PropertyType.long, flags: [.id], id: 1, uid: 1178736466996739328)
+        try entityBuilder.addProperty(name: "lat", type: PropertyType.string, id: 2, uid: 7274864887966152192)
+        try entityBuilder.addProperty(name: "lng", type: PropertyType.string, id: 3, uid: 4358351430157789952)
 
         try entityBuilder.lastProperty(id: 3, uid: 4358351430157789952)
     }
@@ -458,15 +457,15 @@ extension UserDb: ObjectBox.EntityInspectable {
 
     fileprivate static func buildEntity(modelBuilder: ObjectBox.ModelBuilder) throws {
         let entityBuilder = try modelBuilder.entityBuilder(for: UserDb.self, id: 11, uid: 5403898587333376512)
-        try entityBuilder.addProperty(name: "idObjectBox", type: UInt64.entityPropertyType, flags: [.id], id: 1, uid: 3410206595239616256)
-        try entityBuilder.addProperty(name: "id", type: Int.entityPropertyType, id: 2, uid: 3215259498874509312)
-        try entityBuilder.addProperty(name: "name", type: String.entityPropertyType, id: 3, uid: 6153532968214726400)
-        try entityBuilder.addProperty(name: "username", type: String.entityPropertyType, id: 4, uid: 872028903469685504)
-        try entityBuilder.addProperty(name: "email", type: String.entityPropertyType, id: 5, uid: 2304072031187689984)
-        try entityBuilder.addProperty(name: "phone", type: String.entityPropertyType, id: 6, uid: 1034370072078116096)
-        try entityBuilder.addProperty(name: "website", type: String.entityPropertyType, id: 7, uid: 3208706971348692992)
-        try entityBuilder.addToOneRelation(name: "address", targetEntityInfo: ToOne<AddressDb>.Target.entityInfo, id: 9, uid: 6805752390374136576, indexId: 7, indexUid: 8639228755739056896)
-        try entityBuilder.addToOneRelation(name: "company", targetEntityInfo: ToOne<CompanyDb>.Target.entityInfo, id: 8, uid: 1568567613832890624, indexId: 5, indexUid: 7259545675481127168)
+        try entityBuilder.addProperty(name: "idObjectBox", type: PropertyType.long, flags: [.id], id: 1, uid: 3410206595239616256)
+        try entityBuilder.addProperty(name: "id", type: PropertyType.long, id: 2, uid: 3215259498874509312)
+        try entityBuilder.addProperty(name: "name", type: PropertyType.string, id: 3, uid: 6153532968214726400)
+        try entityBuilder.addProperty(name: "username", type: PropertyType.string, id: 4, uid: 872028903469685504)
+        try entityBuilder.addProperty(name: "email", type: PropertyType.string, id: 5, uid: 2304072031187689984)
+        try entityBuilder.addProperty(name: "phone", type: PropertyType.string, id: 6, uid: 1034370072078116096)
+        try entityBuilder.addProperty(name: "website", type: PropertyType.string, id: 7, uid: 3208706971348692992)
+        try entityBuilder.addToOneRelation(name: "address", targetEntityInfo: ToOne<AddressDb>.Target.entityInfo, flags: [.indexed, .indexPartialSkipZero], id: 9, uid: 6805752390374136576, indexId: 7, indexUid: 8639228755739056896)
+        try entityBuilder.addToOneRelation(name: "company", targetEntityInfo: ToOne<CompanyDb>.Target.entityInfo, flags: [.indexed, .indexPartialSkipZero], id: 8, uid: 1568567613832890624, indexId: 5, indexUid: 7259545675481127168)
 
         try entityBuilder.lastProperty(id: 9, uid: 6805752390374136576)
     }
@@ -681,8 +680,16 @@ fileprivate func cModel() throws -> OpaquePointer {
 extension ObjectBox.Store {
     /// A store with a fully configured model. Created by the code generator with your model's metadata in place.
     ///
+    /// # In-memory database
+    /// To use a file-less in-memory database, instead of a directory path pass `memory:` 
+    /// together with an identifier string:
+    /// ```swift
+    /// let inMemoryStore = try Store(directoryPath: "memory:test-db")
+    /// ```
+    ///
     /// - Parameters:
-    ///   - directoryPath: The directory path in which ObjectBox places its database files for this store.
+    ///   - directoryPath: The directory path in which ObjectBox places its database files for this store,
+    ///     or to use an in-memory database `memory:<identifier>`.
     ///   - maxDbSizeInKByte: Limit of on-disk space for the database files. Default is `1024 * 1024` (1 GiB).
     ///   - fileMode: UNIX-style bit mask used for the database files; default is `0o644`.
     ///     Note: directories become searchable if the "read" or "write" permission is set (e.g. 0640 becomes 0750).
@@ -693,8 +700,9 @@ extension ObjectBox.Store {
     ///     threading. For each thread, ObjectBox uses multiple readers. Their number (per thread) depends
     ///     on number of types, relations, and usage patterns. Thus, if you are working with many threads
     ///     (e.g. in a server-like scenario), it can make sense to increase the maximum number of readers.
-    ///     Note: The internal default is currently around 120.
-    ///           So when hitting this limit, try values around 200-500.
+    ///     Note: The internal default is currently around 120. So when hitting this limit, try values around 200-500.
+    ///   - readOnly: Opens the database in read-only mode, i.e. not allowing write transactions.
+    ///
     /// - important: This initializer is created by the code generator. If you only see the internal `init(model:...)`
     ///              initializer, trigger code generation by building your project.
     internal convenience init(directoryPath: String, maxDbSizeInKByte: UInt64 = 1024 * 1024,

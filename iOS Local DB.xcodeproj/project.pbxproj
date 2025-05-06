@@ -17,7 +17,7 @@
 		AB5D1FBE26B50BDA0024C678 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D1FBD26B50BDA0024C678 /* NetworkService.swift */; };
 		AB5D1FC226B50CDC0024C678 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5D1FC126B50CDC0024C678 /* SplashViewModel.swift */; };
 		AB65FBE826BE0A3D00A2A76A /* UserDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65FBE726BE0A3D00A2A76A /* UserDb.swift */; };
-		AB65FBEA26BE2A2000A2A76A /* AppBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65FBE926BE2A2000A2A76A /* AppBox.swift */; };
+		AB65FBEA26BE2A2000A2A76A /* BoxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB65FBE926BE2A2000A2A76A /* BoxService.swift */; };
 		ABF7E0CB26ACDF0D00F76CE0 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7E0CA26ACDF0D00F76CE0 /* HomeViewModel.swift */; };
 		ABF7E0CE26ACE24500F76CE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF7E0CD26ACE24500F76CE0 /* Constants.swift */; };
 		ABF893CF26A673A2006D5A34 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABF893CE26A673A2006D5A34 /* SplashView.swift */; };
@@ -37,7 +37,7 @@
 		AB5D1FBD26B50BDA0024C678 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		AB5D1FC126B50CDC0024C678 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		AB65FBE726BE0A3D00A2A76A /* UserDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDb.swift; sourceTree = "<group>"; };
-		AB65FBE926BE2A2000A2A76A /* AppBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppBox.swift; sourceTree = "<group>"; };
+		AB65FBE926BE2A2000A2A76A /* BoxService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxService.swift; sourceTree = "<group>"; };
 		ABF7E0CA26ACDF0D00F76CE0 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		ABF7E0CD26ACE24500F76CE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ABF893CE26A673A2006D5A34 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				AB65FBE726BE0A3D00A2A76A /* UserDb.swift */,
-				AB65FBE926BE2A2000A2A76A /* AppBox.swift */,
+				AB65FBE926BE2A2000A2A76A /* BoxService.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -297,7 +297,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/ObjectBox/generate_sources.sh\" -- --output \"$PROJECT_DIR/generated/EntityInfo-iOS Local DB.generated.swift\" --model-json \"$PROJECT_DIR/model-iOS Local DB.json\"";
+			shellScript = "\"$PODS_ROOT/ObjectBox/generate_sources.sh\" -- --output \"$PROJECT_DIR/generated/EntityInfo-iOS Local DB.generated.swift\" --model-json \"$PROJECT_DIR/model-iOS Local DB.json\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -317,7 +317,7 @@
 				ABF893CF26A673A2006D5A34 /* SplashView.swift in Sources */,
 				6921EA92197B90C6ACD696DA /* EntityInfo-iOS Local DB.generated.swift in Sources */,
 				AB1E502D26BD3B1300DE00C7 /* DetailViewModel.swift in Sources */,
-				AB65FBEA26BE2A2000A2A76A /* AppBox.swift in Sources */,
+				AB65FBEA26BE2A2000A2A76A /* BoxService.swift in Sources */,
 				ABF7E0CE26ACE24500F76CE0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -431,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -451,7 +451,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"iOS Local DB/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "iOS Local DB/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -473,7 +473,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"iOS Local DB/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "iOS Local DB/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

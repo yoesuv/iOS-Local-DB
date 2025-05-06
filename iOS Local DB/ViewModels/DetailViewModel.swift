@@ -6,11 +6,10 @@
 //
 
 import Foundation
-import ObjectBox
 
 class DetailViewModel: ObservableObject {
     
-    var userBox: Box<UserDb>? = nil
+    let userBox = BoxService.shared.box(entity: UserDb.self)
     
     @Published var id : Int = 0
     @Published var name : String = ""
@@ -25,15 +24,6 @@ class DetailViewModel: ObservableObject {
     @Published var companyCatchPhrase : String = ""
     @Published var companyBusiness : String = ""
     
-    
-    init() {
-        do {
-            let store = try AppBox.boxInit(dbName: Constants.dbName)
-            userBox = store.box(for: UserDb.self)
-        } catch {
-            print("DetailViewModel # error init \(error)")
-        }
-    }
     
     func loadUser(id: UInt64?) {
         do {
