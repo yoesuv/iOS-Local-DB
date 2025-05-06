@@ -297,7 +297,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/ObjectBox/generate_sources.sh\" -- --output \"$PROJECT_DIR/generated/EntityInfo-iOS Local DB.generated.swift\" --model-json \"$PROJECT_DIR/model-iOS Local DB.json\"";
+			shellScript = "\"$PODS_ROOT/ObjectBox/generate_sources.sh\" -- --output \"$PROJECT_DIR/generated/EntityInfo-iOS Local DB.generated.swift\" --model-json \"$PROJECT_DIR/model-iOS Local DB.json\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

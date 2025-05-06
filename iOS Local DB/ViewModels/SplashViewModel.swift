@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SplashViewModel: BoxService {
+class SplashViewModel {
     
     private let service = NetworkService()
     
@@ -15,7 +15,7 @@ class SplashViewModel: BoxService {
         service.fetchUsers { users in
             if let data = users {
                 do {
-                    let userBox = self.box(entity: UserDb.self)
+                    let userBox = BoxService.shared.box(entity: UserDb.self)
                     try userBox?.removeAll()
                     print("SplashViewModel # users count \(data.count)")
                     var listUserDb = [UserDb]()
@@ -49,6 +49,7 @@ class SplashViewModel: BoxService {
                         listUserDb.append(userDb)
                     }
                     try userBox?.put(listUserDb)
+                
                     doneLoading()
                 } catch {
                     print("SplashViewModel # error \(error)")

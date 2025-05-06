@@ -7,8 +7,9 @@
 
 import Foundation
 
-class DetailViewModel: BoxService, ObservableObject {
+class DetailViewModel: ObservableObject {
     
+    let userBox = BoxService.shared.box(entity: UserDb.self)
     
     @Published var id : Int = 0
     @Published var name : String = ""
@@ -26,7 +27,6 @@ class DetailViewModel: BoxService, ObservableObject {
     
     func loadUser(id: UInt64?) {
         do {
-            let userBox = self.box(entity: UserDb.self)
             let boxUser = try userBox?.get(id!)
             if let data = boxUser {
                 self.id = data.id

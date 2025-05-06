@@ -7,12 +7,12 @@
 
 import Foundation
 
-class HomeViewModel: BoxService, ObservableObject  {
+class HomeViewModel: ObservableObject  {
     
     @Published var users = [UserDb]()
+    let userBox = BoxService.shared.box(entity: UserDb.self)
     
     func loadUsers() {
-        let userBox = self.box(entity: UserDb.self)
         if let box = userBox {
             do {
                 print("HomeViewModel # user count \(try box.all().count)")
@@ -24,7 +24,6 @@ class HomeViewModel: BoxService, ObservableObject  {
     }
     
     func deleteUser(id: UInt64) {
-        let userBox = self.box(entity: UserDb.self)
         if let box = userBox {
             do {
                 try box.remove(id)
@@ -35,7 +34,6 @@ class HomeViewModel: BoxService, ObservableObject  {
     }
     
     func deleteAllUser() {
-        let userBox = self.box(entity: UserDb.self)
         if let box = userBox {
             do {
                 try box.removeAll()

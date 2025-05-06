@@ -10,6 +10,7 @@ import ObjectBox
 
 class BoxService {
     
+    static let shared = BoxService()
     private var store: Store?
     
     init() {
